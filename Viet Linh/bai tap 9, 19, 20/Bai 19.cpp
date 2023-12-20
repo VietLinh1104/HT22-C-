@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// dựng hàm tìm ước chung lớn nhất
+// 8-15 dung ham tim uoc chung lon nhat
 int UCLN(int a, int b){
 	while(b != 0){
 		int r= a%b;
@@ -14,33 +14,33 @@ int UCLN(int a, int b){
 	return a;
 }
 
-// class phân số 1
+// 18-34 class phanso1
 class PhanSo1{
 	protected:
-		//21 thuộc tính của class PhanSo1
+		//21 thuoc tinh cua class phanso1
 		int ts,ms;
 
 	public:
-		//23-24 tạo hàm tạo 
+		//25-26 tao ham tao 
 		PhanSo1();
 		PhanSo1(int ts, int ms);
 
-		//27-28 tạo phương thức nhập xuất nạp chồng toán tử 
+		//29-30 tạo phương thức nhập xuất nạp chồng toán tử 
 		friend istream& operator >> (istream& in, PhanSo1& obj);
 		friend ostream& operator << (ostream& out, PhanSo1 obj);
 
-		//32 tạo phương thức tối giản của class PhanSo1
+		//33 tạo phương thức tối giản của class PhanSo1
 		void toi_gian();
 };
 
 //xây dựng các phương thức đã tạo của class PhanSo1
-//hàm tạo
+// 38-41 hàm tạo
 PhanSo1::PhanSo1(){
 	ts = 0;
 	ms = 0;
 }
 
-//hàm tạo
+// hàm tạo
 PhanSo1::PhanSo1(int ts, int ms){
 	this -> ts = ts;
 	this -> ms = ms;
@@ -85,6 +85,11 @@ class PhanSo2:public PhanSo1{
 		bool operator > (PhanSo2& obj){
 			return ts * obj.ms > obj.ts * ms;
 		}
+
+		PhanSo2 operator = (PhanSo2& obj){
+			this -> ts = obj.ts;
+			this -> ms = obj.ms;
+		}
 };
 
 //xây dựng các phương thức đã tạo của class PhanSo2
@@ -105,8 +110,15 @@ int main(){
 	cout << "Nhap N: "; cin >> n;
 	PhanSo2 a[n];
 
-	for(int i=0, i<n, i++){
-		cout << "Nhap phan so "<<i << ": ";
+	for(int i=0; i<n; i++){
+		cout << "Nhap phan so "<<i << ": \n";
 		cin >> a[i];
 	}
+	PhanSo2 ps_max = a[0];
+	for(int i=1; i<n; i++){
+		if(a[i] > ps_max){
+			ps_max = a[i];
+		}
+	}
+	cout <<"Phan so lon nhat: "<< ps_max;
 }
