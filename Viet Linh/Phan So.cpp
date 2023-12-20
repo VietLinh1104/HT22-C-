@@ -34,13 +34,13 @@ class PhanSo1{
 };
 
 //xây dựng các phương thức đã tạo của class PhanSo1
-//hàm tạo
+//
 PhanSo1::PhanSo1(){
 	ts = 0;
 	ms = 0;
 }
 
-//hàm tạo
+//
 PhanSo1::PhanSo1(int ts, int ms){
 	this -> ts = ts;
 	this -> ms = ms;
@@ -75,10 +75,6 @@ ostream& operator << (ostream& out, PhanSo1 obj){
 // class phân số 2 kế thừa của class phân số 1
 class PhanSo2:public PhanSo1{
 	public:
-		//tạo hàm tạo
-		PhanSo2();
-		PhanSo2(int ts, int ms);
-
 		bool operator < (PhanSo2& obj){
 			return ts * obj.ms < obj.ts * ms;
 		}
@@ -86,19 +82,6 @@ class PhanSo2:public PhanSo1{
 			return ts * obj.ms > obj.ts * ms;
 		}
 };
-
-//xây dựng các phương thức đã tạo của class PhanSo2
-//hàm tạo
-PhanSo2::PhanSo2(){
-	ts = 0;
-	ms = 0;
-}
-
-//hàm tạo
-PhanSo2::PhanSo2(int ts, int ms):PhanSo1(ts,ms){
-	this -> ts = ts;
-	this -> ms = ms;
-}
 
 int main(){
 	PhanSo2 a,b;
