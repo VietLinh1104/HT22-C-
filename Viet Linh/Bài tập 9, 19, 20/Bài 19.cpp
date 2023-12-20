@@ -101,8 +101,12 @@ PhanSo2::PhanSo2(int ts, int ms):PhanSo1(ts,ms){
 }
 
 int main(){
-	PhanSo2 a,b;
-	cin >> a;
-	cin >> b;
-	cout << (a<b);
+	int n;
+	cout << "Nhap N: "; cin >> n;
+	PhanSo2 a[n];
+
+	for(int i=0, i<n, i++){
+		cout << "Nhap phan so "<<i << ": ";
+		cin >> a[i];
+	}
 }
