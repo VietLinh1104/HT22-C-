@@ -113,6 +113,7 @@ int main(){
 	for(int i=0; i<n; i++){
 		cout << "Nhap phan so "<<i << ": \n";
 		cin >> a[i];
+		cout << endl;
 	}
 	PhanSo2 ps_max = a[0];
 	for(int i=1; i<n; i++){
@@ -121,4 +122,5 @@ int main(){
 		}
 	}
 	cout <<"Phan so lon nhat: "<< ps_max;
+	return 0;
 }
