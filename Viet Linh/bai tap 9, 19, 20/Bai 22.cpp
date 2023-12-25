@@ -5,11 +5,13 @@
 
 using namespace std;
 
-//class SP1
+// 8-22 class SP1
 class SP1{
+    //thuoc tinh class
     protected:
         int a,b;
     public:
+        //14-15 tao ham tao
         SP1();
         SP1(int a, int b);
 
@@ -19,6 +21,7 @@ class SP1{
         friend ostream& operator << (ostream& out, SP1& obj);
 };
 
+//24-64 xay dung cac ham da tao
 SP1::SP1(){
     a = 0;
     b = 0;
@@ -61,12 +64,13 @@ ostream& operator << (ostream& out, SP1& obj){
 }
 
 
-//class SP2
+//68 - 85 class SP2
 class SP2: public SP1{
     public:
         SP2();
         SP2(int a, int b);
 
+        // 74-84 2 toan tu gan va so sanh
         SP2 operator = (SP2& obj){
             this -> a = obj.a;
             this -> b = obj.b;
@@ -80,6 +84,8 @@ class SP2: public SP1{
         }
 };
 
+
+//89-97 xay dung 2 ham tao
 SP2::SP2(){
     a = 0;
     b = 0;
@@ -90,6 +96,7 @@ SP2::SP2(int a,int b):SP1(a,b){
     this -> b = b;
 }
 
+//function tim sp lon nhat
 SP2 find_max(SP2 obj[10], int n){
     SP2 obj_max = obj[0];
     for(int i=1; i<n; i++){
