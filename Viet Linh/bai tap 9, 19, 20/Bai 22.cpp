@@ -78,8 +78,6 @@ class SP2: public SP1{
 
             return sp1 < sp2;
         }
-
-        friend ostream& operator << (ostream& out, SP2& obj);
 };
 
 SP2::SP2(){
@@ -90,14 +88,6 @@ SP2::SP2(){
 SP2::SP2(int a,int b):SP1(a,b){
     this -> a = a;
     this -> b = b;
-}
-
-ostream& operator << (ostream& out, SP2& obj){
-    out << obj.a;
-    display_b(obj.b);
-    cout <<"i";
-    
-    return out;
 }
 
 SP2 find_max(SP2 obj[10], int n){
