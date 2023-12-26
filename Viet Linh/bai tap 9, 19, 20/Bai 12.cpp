@@ -12,7 +12,7 @@ class MonHoc{                           //7-11 class MonHoc
 
 class SinhVien: public MonHoc{          //13-25 class SinhVien Ke thua MonHoc
     private:
-        string hoTen, tenLop, maSV;     //15-16 thuoc tinh nhan vien
+        string hoTen, tenLop, maSV;     //15-16 thuoc tinh sinh vien
         float GPA;
     public:
         void input();                   //18-19 khoi tao phuong thuc nhap xuat
