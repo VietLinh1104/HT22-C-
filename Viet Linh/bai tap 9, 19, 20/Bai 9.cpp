@@ -97,8 +97,4 @@ int main(){
             cout << a[i];
         }
     }
-    
-
-
-
 }

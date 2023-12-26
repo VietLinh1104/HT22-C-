@@ -18,21 +18,21 @@ class SP1{
         void input();
         void display();
 
-        friend ostream& operator << (ostream& out, SP1& obj);
+        friend ostream& operator << (ostream& out, SP1& obj);   //khoi tao in ra so phuc
 };
 
 //24-64 xay dung cac ham da tao
-SP1::SP1(){
+SP1::SP1(){     //ham khoi tao
     a = 0;
     b = 0;
 }
 
-SP1::SP1(int a, int b){
+SP1::SP1(int a, int b){     //ham khoi tao
     this -> a = a;
     this -> b = b;
 }
 
-void SP1::input(){
+void SP1::input(){                      //ham nhap
     cout << "So Thuc Co Dang a+bi.\n";
     cout << "Phan Thuc (a): ";
     cin >> a;
@@ -40,7 +40,7 @@ void SP1::input(){
     cin >> b;
 }
 
-void display_b(int b){
+void display_b(int b){      //ham in ra phan ao
     if(b < 0){
         cout << b;
     }
@@ -49,13 +49,13 @@ void display_b(int b){
     }
 }
 
-void SP1::display(){
+void SP1::display(){        //ham in ra so phuc
     cout << a;
     display_b(b);
     cout <<"i";
 }
 
-ostream& operator << (ostream& out, SP1& obj){
+ostream& operator << (ostream& out, SP1& obj){      //toan tu in ra so phuc
     out << obj.a;
     display_b(obj.b);
     out << "i";
@@ -71,12 +71,12 @@ class SP2: public SP1{
         SP2(int a, int b);
 
         // 74-84 2 toan tu gan va so sanh
-        SP2 operator = (SP2& obj){
+        SP2 operator = (SP2& obj){          //ham gan so phuc
             this -> a = obj.a;
             this -> b = obj.b;
         }
 
-        bool operator < (SP2 obj){
+        bool operator < (SP2 obj){          //so sanh so phuc
             double sp1 = sqrt(a*a + b*b);
             double sp2 = sqrt(obj.a*obj.a + obj.b*obj.b);
 
