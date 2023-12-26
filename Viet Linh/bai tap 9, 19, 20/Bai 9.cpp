@@ -4,19 +4,23 @@
 
 using namespace std;
 
+//8-21 class Nhan vien
 class NhanVien{
     private:
+        //10-11 thuoc tinh class
         string hoTen, chucVu, gioiTinh, queQuan;
         int namSinh, namVao;
 
     public:
+        //15-16 khoi tao nap chong toan tu nhap xuat
         friend istream& operator >> (istream& in, NhanVien& obj);
         friend ostream& operator << (ostream& out, NhanVien& obj);
 
+        // 19 khoi tao get nam vao lam
         int get_namVao();
-
 };
 
+//24-50 xay dung toan tu nhap xuat
 istream& operator >> (istream& in, NhanVien& obj){
     cout << "Ho Ten: "; in.ignore();
     getline(in, obj.hoTen);
@@ -45,15 +49,18 @@ ostream& operator << (ostream& out, NhanVien& obj){
     cout <<"|"<< left<< setw(10)<< obj.chucVu<<"|";
 }
 
+// 53-55 get nam vao lam
 int NhanVien::get_namVao(){
     return namVao;
 }
 
+//58-61 ham tinh so nam vao lam
 int sonam_vaolam(int namVao, int namHT){
     int soNam = namVao - namHT;
     return soNam;
 }
 
+// ham in ra list header
 void list_header(){
     cout <<"|"<< left<< setw(14)<< "Ho Ten";
     cout <<"|"<< left<< setw(10)<< "Nam Sinh";
